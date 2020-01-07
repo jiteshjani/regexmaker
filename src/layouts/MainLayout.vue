@@ -2,10 +2,7 @@
   <q-layout view="hhh lpR lfr">
     <q-header reveal elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-toolbar-title class="absolute-center">
-          RegexMaker
-          <small class="text-weight-thin">v1.0.0</small>
-        </q-toolbar-title>
+        <q-toolbar-title class="absolute-center">RegexMaker</q-toolbar-title>
       </q-toolbar>
     </q-header>
 
