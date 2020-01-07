@@ -12,10 +12,19 @@
 
     <q-footer bordered class="bg-grey-8 text-white">
       <q-toolbar>
-        <q-toolbar-title class="li">
+        <q-toolbar-title>
           RegexMaker
           <small class="text-weight-thin">v1.0.0</small>
         </q-toolbar-title>
+        <q-btn
+          flat
+          round
+          color="white"
+          type="a"
+          href="https://github.com/JiteshJani/regexmaker"
+          target="__blank"
+          icon="code"
+        />
       </q-toolbar>
     </q-footer>
   </q-layout>
