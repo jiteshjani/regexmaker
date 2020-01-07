@@ -2,6 +2,8 @@
 
 A simple app for easily creating regular expression for JavaScript
 
+#### Online Demo: [RegexMaker](https://jiteshjani.github.io/regexmaker/#/)
+
 ## Install the dependencies
 
 ```bash
