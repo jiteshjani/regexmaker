@@ -10,12 +10,12 @@
     "__internal": {
       "dev": {
         "spa": {
-          "iconHash": "c2b692725a1a8395e3d0d7e75b978caf"
+          "iconHash": "9bd1493e6c357680ce9f6845f4e5b2d8"
         }
       },
       "build": {
         "spa": {
-          "iconHash": "c2b692725a1a8395e3d0d7e75b978caf"
+          "iconHash": "9bd1493e6c357680ce9f6845f4e5b2d8"
         },
         "electron": {
           "iconHash": "c2b692725a1a8395e3d0d7e75b978caf"
