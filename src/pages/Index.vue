@@ -5,35 +5,25 @@
         <q-card-section>
           <div class="row">
             <div class="col-xs-12 col-sm-6 q-pa-sm">
-              <q-input
-                outlined
-                v-model="before"
-                label="Before the required string"
-              />
+              <q-input outlined bottom-slots v-model="before" label="Before the required string">
+                <template v-if="!isES9Supported" v-slot:hint>
+                  <span
+                    class="text-orange-9"
+                  >** This feature might not work as expected without ES9 support.</span>
+                </template>
+              </q-input>
             </div>
             <div class="col-xs-12 col-sm-6 q-pa-sm">
-              <q-input
-                outlined
-                v-model="after"
-                label="After the required string"
-              />
+              <q-input outlined v-model="after" label="After the required string" />
             </div>
           </div>
 
           <div class="row">
             <div class="col-xs-12 col-sm-6 q-pa-sm">
-              <q-input
-                outlined
-                v-model="startWith"
-                label="Required string starts with"
-              />
+              <q-input outlined v-model="startWith" label="Required string starts with" />
             </div>
             <div class="col-xs-12 col-sm-6 q-pa-sm">
-              <q-input
-                outlined
-                v-model="endWith"
-                label="Required string ends with"
-              />
+              <q-input outlined v-model="endWith" label="Required string ends with" />
             </div>
           </div>
 
@@ -42,10 +32,7 @@
               <strong>Modifiers:</strong>
               <div class="col q-gutter-sm">
                 <q-checkbox v-model="global" label="Global" />
-                <q-checkbox
-                  v-model="caseInsensitive"
-                  label="Case Insensitive"
-                />
+                <q-checkbox v-model="caseInsensitive" label="Case Insensitive" />
                 <q-checkbox v-model="multiLine" label="Multi-Line" />
                 <q-checkbox v-model="unicode" label="Unicode" />
                 <q-checkbox v-model="sticky" label="Sticky" />
@@ -54,27 +41,19 @@
             <div class="col-xs-12 col-sm-6 q-pa-sm">
               <strong>Additional Settings:</strong>
               <div class="col q-gutter-sm">
-                <q-checkbox
-                  v-model="autoEscape"
-                  label="Auto Escape Input Values"
-                >
-                  <q-tooltip
-                    content-class="bg-warning text-grey-8"
-                    content-style="font-size: 16px"
-                    >If you are conformable with regex and want to use special
+                <q-checkbox v-model="autoEscape" label="Auto Escape Input Values">
+                  <q-tooltip content-class="bg-warning text-grey-8" content-style="font-size: 16px">
+                    If you are conformable with regex and want to use special
                     characters in the input fields, then uncheck this
-                    option.</q-tooltip
-                  >
+                    option.
+                  </q-tooltip>
                 </q-checkbox>
                 <q-checkbox
                   v-if="isES9Supported"
                   v-model="enableES9"
                   label="Enable ES9 Regex Features"
                 >
-                  <q-tooltip
-                    content-class="bg-warning text-grey-8"
-                    content-style="font-size: 16px"
-                  >
+                  <q-tooltip content-class="bg-warning text-grey-8" content-style="font-size: 16px">
                     ES8 regex features are still not supported by many browsers,
                     so your regular expression might not work on different
                     devices.
@@ -89,21 +68,9 @@
               <strong>Regex Pattern:</strong>
             </div>
             <div class="col q-pa-sm">
-              <q-input
-                outlined
-                v-model="regexPattern"
-                class="bg-orange-1"
-                readonly
-              >
+              <q-input outlined v-model="regexPattern" class="bg-orange-1" readonly>
                 <template v-slot:append>
-                  <q-btn
-                    @click="copyRegex"
-                    class="text-blue-8"
-                    round
-                    dense
-                    flat
-                    icon="file_copy"
-                  >
+                  <q-btn @click="copyRegex" class="text-blue-8" round dense flat icon="file_copy">
                     <q-tooltip>Copy Regular Expression</q-tooltip>
                   </q-btn>
                 </template>
@@ -119,13 +86,7 @@
 
             <div class="col-xs-12 col-sm-6 q-px-sm">
               <strong>Matches:</strong>
-              <q-input
-                v-model="matchText"
-                filled
-                outlined
-                type="textarea"
-                readonly
-              />
+              <q-input v-model="matchText" filled outlined type="textarea" readonly />
             </div>
           </div>
         </q-card-section>
